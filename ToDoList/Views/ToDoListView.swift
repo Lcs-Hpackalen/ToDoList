@@ -25,9 +25,7 @@ struct ToDoListView: View {
                 .textFieldStyle(.roundedBorder)
                 .foregroundStyle(.gray)
             Divider()
-            List{
-                
-            }
+            List(ToDoItems) { in 
         }
         .padding()
     }

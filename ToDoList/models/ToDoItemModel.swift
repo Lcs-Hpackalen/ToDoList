@@ -11,11 +11,14 @@ import SwiftUICore
  struct ToDoItemModel: Identifiable {
     var id: UUID = UUID()
     var description: String
-    var isCompleted: Bool = false
+    var isCompleted: Bool
 }
 
 let ToDoItems: [ToDoItemModel] = []
 
+
+let sampleData = ToDoItemModel(description: "Walk the dog", isCompleted: false)
+    
 
 
 

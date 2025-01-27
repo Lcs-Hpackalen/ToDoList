@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ToDoItem: View {
+    //Mark: stored properties
+    var providedItem: ToDoItemModel
+    //Mark: computed properties
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            
+            Text("\(providedItem.description)")
     }
+  }
 }
 
 #Preview {
-    ToDoItem()
+    ToDoItem(providedItem: sampleData)
 }
