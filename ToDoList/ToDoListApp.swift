@@ -5,13 +5,8 @@
 //  Created by Hannu Packalen on 2025-01-27.
 //
 
-import SwiftUI
-
-@main
-struct ToDoListApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ToDoListView()
-        }
-    }
+struct TodoItem: String{
+    @State var text = ""
+    @State var isCompleted = false
 }
+

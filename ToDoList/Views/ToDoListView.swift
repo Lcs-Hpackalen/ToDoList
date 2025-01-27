@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ToDoListView: View {
     //Mark: stored properties
+    @State var newItemDescription: String = ""
     
+    @State var searchText: String = ""
     //Mark: computed properties
     var body: some View {
         VStack {
