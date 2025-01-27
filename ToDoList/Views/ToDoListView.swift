@@ -21,8 +21,13 @@ struct ToDoListView: View {
                           
                 Spacer()
             }
-            TextField("search", text: $searchText)
-               
+            TextField("\(Image(systemName: "magnifyingglass")) search", text: $searchText)
+                .textFieldStyle(.roundedBorder)
+                .foregroundStyle(.gray)
+            Divider()
+            List{
+                
+            }
         }
         .padding()
     }
