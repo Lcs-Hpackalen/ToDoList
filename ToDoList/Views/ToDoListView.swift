@@ -21,6 +21,8 @@ struct ToDoListView: View {
                           
                 Spacer()
             }
+            TextField("search", text: $searchText)
+               
         }
         .padding()
     }
