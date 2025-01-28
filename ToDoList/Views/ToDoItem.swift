@@ -12,17 +12,24 @@ struct ToDoItem: View {
     @State var providedItem: ToDoItemModel
     
     //Mark: computed properties
+    var doneImage: Image{
+        if providedItem.done == true {
+            return Image(systemName: "checkmark.circle.fill")
+        }
+        else {
+            return Image(systemName: "circle")
+        }
+    }
     var body: some View {
         HStack {
             Button(action:{
                 providedItem.done.toggle()
             } , label:{
-                Image (systemName: providedItem.done ? "circle.checkmark" : "circle.empty")
-                    .resizable()
-                    .scaledToFit()
+                Image (systemName: "\(doneImage)")
             })
             
             Text("\(providedItem.description)")
+                .font(.system(size: 31))
     }
   }
 }

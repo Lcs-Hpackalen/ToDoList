@@ -17,7 +17,7 @@ import SwiftUICore
 let ToDoItems: [ToDoItemModel] = [sampleData]
 
 
-let sampleData = ToDoItemModel(description: "Walk the dog",done: false)
+let sampleData = ToDoItemModel(description: "Walk the dog",done: true)
     
 
 
