@@ -14,11 +14,11 @@ import SwiftUICore
     @State var done: Bool
 }
 
-let ToDoItems: [ToDoItemModel] = [sampleData]
+let ToDoItems: [ToDoItemModel] = [sampleData, sampleData2]
 
 
-let sampleData = ToDoItemModel(description: "Walk the dog",done: true)
-    
+var sampleData = ToDoItemModel(description: "Walk the dog",done: false)
+var sampleData2 = ToDoItemModel(description: "Buy milk",done: false)
 
 
 
