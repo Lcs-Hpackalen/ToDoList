@@ -18,19 +18,18 @@ struct ToDoListView: View {
             HStack{
                 Text("To do")
                     .font(.system(size: 44))
-                          
+                
                 Spacer()
             }
             TextField("\(Image(systemName: "magnifyingglass")) search", text: $searchText)
                 .textFieldStyle(.roundedBorder)
                 .foregroundStyle(.gray)
             Divider()
-            List(ToDoItems) { in 
+            
+                .padding()
         }
-        .padding()
     }
 }
-
 #Preview {
     ToDoListView()
 }
