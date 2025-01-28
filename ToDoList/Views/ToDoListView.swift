@@ -12,21 +12,30 @@ struct ToDoListView: View {
     @State var newItemDescription: String = ""
     
     @State var searchText: String = ""
+    
+    
+    @State var toDos: [ToDoItemModel] = ToDoItems
     //Mark: computed properties
     var body: some View {
-        VStack {
-            HStack{
-                Text("To do")
-                    .font(.system(size: 44))
-                
-                Spacer()
-            }
-            TextField("\(Image(systemName: "magnifyingglass")) search", text: $searchText)
-                .textFieldStyle(.roundedBorder)
-                .foregroundStyle(.gray)
-            Divider()
+        NavigationView{
             
+            VStack{
+                
+                List(toDos){ todo in
+                    ItemView(currentItem: todo)
+                }
+                .searchable(text: $searchText)
+                
+                HStack{
+                    TextField("Add new item", text: $newItemDescription)
+                    Button("Add"){
+                        
+                    }
+                    .font(.caption)
+                }
                 .padding()
+            }
+            .navigationTitle("To Do List")
         }
     }
 }
