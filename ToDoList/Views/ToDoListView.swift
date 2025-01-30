@@ -30,7 +30,7 @@ struct ToDoListView: View {
                 HStack{
                     TextField("Add new item", text: $newItemDescription)
                     Button("Add"){
-                        
+                        createToDoItem(withTitle: newItemDescription)
                     }
                     .font(.caption)
                 }
@@ -38,6 +38,17 @@ struct ToDoListView: View {
             }
             .navigationTitle("To Do List")
         }
+    }
+    
+    //Mark: Function
+    func createToDoItem(withTitle title: String){
+        
+        
+        let todo = ToDoItemModel(
+            description: title,
+            done: false
+        )
+        toDos.append(todo)
     }
 }
 #Preview {
