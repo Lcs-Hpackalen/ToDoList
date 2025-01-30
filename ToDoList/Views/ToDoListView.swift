@@ -23,7 +23,18 @@ struct ToDoListView: View {
             VStack{
                 
                 List(toDos){ todo in
+                    
                     ItemView(currentItem: todo)
+                    
+                        .swipeActions{
+                            Button(
+                                "Delete",
+                                role: .destructive,
+                                action: {
+                                    delete(todo)
+                                }
+                            )
+                        }
                 }
                 .searchable(text: $searchText)
                 
@@ -50,6 +61,13 @@ struct ToDoListView: View {
             done: false
         )
         toDos.append(todo)
+    }
+    
+    func delete(_ todo: ToDoItemModel){
+        
+        toDos.removeAll { currentItem in
+            currentItem.id == todo.id
+        }
     }
 }
 #Preview {
