@@ -15,6 +15,7 @@ struct ToDoListView: View {
     
     
     @State var toDos: [ToDoItemModel] = ToDoItems
+    
     //Mark: computed properties
     var body: some View {
         NavigationView{
