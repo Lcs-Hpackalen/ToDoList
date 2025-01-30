@@ -14,7 +14,7 @@ struct ItemView: View {
     var body: some View {
         Label(
             title: {
-                Text("\(currentItem.description)")
+                TextField("Enter a to-do item", text: $currentItem.description, axis: .vertical)
             }, icon: {
                 Image(systemName: currentItem.done == true ? "checkmark.circle" : "circle")
                     .onTapGesture {
