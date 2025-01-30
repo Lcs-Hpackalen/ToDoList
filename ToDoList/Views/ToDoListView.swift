@@ -22,7 +22,7 @@ struct ToDoListView: View {
             
             VStack{
                 
-                List(toDos){ todo in
+                List($toDos) { $todo in
                     
                     ItemView(currentItem: todo)
                     
@@ -34,6 +34,9 @@ struct ToDoListView: View {
                                     delete(todo)
                                 }
                             )
+                        }
+                        .onTapGesture {
+                            todo.done.toggle()
                         }
                 }
                 .searchable(text: $searchText)

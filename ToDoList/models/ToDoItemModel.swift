@@ -11,7 +11,7 @@ import SwiftUICore
  struct ToDoItemModel: Identifiable {
     var id: UUID = UUID()
     var description: String
-    @State var done: Bool
+    var done: Bool
 }
 
 let ToDoItems: [ToDoItemModel] = [sampleData, sampleData2]
