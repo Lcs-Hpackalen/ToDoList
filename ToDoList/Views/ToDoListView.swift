@@ -33,6 +33,7 @@ struct ToDoListView: View {
                         createToDoItem(withTitle: newItemDescription)
                     }
                     .font(.caption)
+                    .disabled(newItemDescription.isEmpty == true)
                 }
                 .padding()
             }
