@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemView: View {
-    let currentItem: ToDoItemModel
+    @Binding var currentItem: ToDoItemModel
     
     
     var body: some View {
@@ -17,6 +17,9 @@ struct ItemView: View {
                 Text("\(currentItem.description)")
             }, icon: {
                 Image(systemName: currentItem.done == true ? "checkmark.circle" : "circle")
+                    .onTapGesture {
+                        currentItem.done.toggle()
+                    }
             }
         )
     }
@@ -24,7 +27,7 @@ struct ItemView: View {
 
 #Preview {
     List {
-        ItemView(currentItem: sampleData)
-        ItemView(currentItem: sampleData2)
+        ItemView(currentItem: Binding.constant(sampleData))
+        ItemView(currentItem: Binding.constant(sampleData2))
     }
 }

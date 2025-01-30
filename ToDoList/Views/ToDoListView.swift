@@ -24,7 +24,7 @@ struct ToDoListView: View {
                 
                 List($toDos) { $todo in
                     
-                    ItemView(currentItem: todo)
+                    ItemView(currentItem: $todo)
                     
                         .swipeActions{
                             Button(
@@ -35,9 +35,7 @@ struct ToDoListView: View {
                                 }
                             )
                         }
-                        .onTapGesture {
-                            todo.done.toggle()
-                        }
+                        
                 }
                 .searchable(text: $searchText)
                 
